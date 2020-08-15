@@ -1,10 +1,20 @@
-const typeDefs = `
+/**
+ * Some Mutations are auto-generated.
+ * Check neo4j and then add mutations and any necessary resolvers.
+ *
+ * Add @cypher directive for the following:
+ * Query: Groups, Users, Me
+ * User(?): generalInfo, studyData
+ * Group(?): generalInfo, studyData
+ */
+
+export const typeDefs = `
   type Query {
-    groups: [Group!]
-    users: [User!]
-    user(username: String): User
-    group(username: String): User
-    me: User
+    Groups(username: String): [Group!]
+    Users(username: String): [User!]
+    User(username: String): User
+    Group(username: String): User
+    Me: User
   }
 
   type User {
@@ -45,5 +55,3 @@ const typeDefs = `
     RESTRICTED
   }
 `;
-
-module.exports = typeDefs;
