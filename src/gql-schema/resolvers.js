@@ -1,6 +1,6 @@
-import { neo4jgraphql } from "neo4j-graphql-js";
+const { neo4jgraphql } = require("neo4j-graphql-js");
 
-export const resolvers = {
+module.exports = {
   Query: {
     // no resolvers added yet for the following Queries:
     // Groups, Users, Me

@@ -1,0 +1,28 @@
+{
+  "name": "apollo-gql",
+  "version": "1.0.0",
+  "description": "Building a GraphQL API using Neo4j as database",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "nodemon src/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/instamentality/apollo-gql.git"
+  },
+  "author": "catyuan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/instamentality/apollo-gql/issues"
+  },
+  "homepage": "https://github.com/instamentality/apollo-gql#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  },
+  "dependencies": {
+    "apollo-server": "^2.16.1",
+    "neo4j-driver": "^4.1.1",
+    "neo4j-graphql-js": "^2.15.1"
+  }
+}

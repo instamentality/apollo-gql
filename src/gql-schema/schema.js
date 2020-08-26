@@ -8,10 +8,10 @@
  * Group(?): generalInfo, studyData
  */
 
-export const typeDefs = `
+module.exports = `
   type Query {
-    Groups(username: String): [Group!]
-    Users(username: String): [User!]
+    Groups(username: String): [Group]
+    Users(username: String): [User]
     User(username: String): User
     Group(username: String): User
     Me: User
@@ -20,9 +20,9 @@ export const typeDefs = `
   type User {
     generalInfo: GeneralInfo!
     studyData: StudyData!
-    buddies: [User!]
+    buddies: [User]
       @relation(name: "BUDDY_OF", direction: "BOTH")
-    groups: [Group!]
+    groups: [Group]
       @relation(name: "MEMBER_OF", direction: "OUT")
     email: String
     password: String!
@@ -40,13 +40,13 @@ export const typeDefs = `
   }
 
   type Group {
-    admin: User!
+    admin: User
       @relation(name: "OWNER_OF", direction: "IN")
     generalInfo: GeneralInfo!
     studyData: StudyData!
     description: String
     privacy: GroupPrivacy!
-    members: [User!]
+    members: [User]
   }
 
   enum GroupPrivacy {
