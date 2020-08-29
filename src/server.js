@@ -5,7 +5,7 @@ const { typeDefs, resolvers } = require("./gql-schema");
 
 const schema = makeAugmentedSchema({
   typeDefs,
-  resolvers,
+  // resolvers,
 });
 
 const driver = neo4j.driver(
@@ -18,6 +18,6 @@ const server = new ApolloServer({
   schema,
 });
 
-server.listen(3003, "0.0.0.0").then(({ url }) => {
+server.listen(3003, "localhost").then(({ url }) => {
   console.log(`GraphQL API ready at ${url}`);
 });
